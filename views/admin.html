@@ -1,0 +1,41 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Round</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Test Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+<script type="text/javascript">
+  $.ajax({
+    url: 'api/test/show',
+    type: 'POST',
+    dataType: 'json',
+    success: function(data){
+      let tbody;
+      let j = 1;
+      $.each(data, function(i, row){
+        tbody += "<tr>";
+        tbody += "<td>"+j+"</td>";
+        tbody += "<td>"+row.questionRound+"</td>";
+        tbody += "<td>"+row.basicInfo.name+"</td>";
+        tbody += "<td>"+row.basicInfo.email+"</td>";
+        tbody += "<td>"+row.basicInfo.phone+"</td>";
+        tbody += "<td><ul>";
+        $.each(row.questions, function(ii, roww){
+           tbody += "<li>"+roww.questionId+" "+roww.userChoice.option+". "+roww.userChoice.optionValue+"</li>"; 
+        });
+        tbody += "</ul></td></tr>";
+        j++;
+      });
+      $('tbody').html(tbody);
+    }
+  })
+</script>

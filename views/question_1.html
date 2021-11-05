@@ -1,0 +1,72 @@
+<div class="container col-lg-8 col-lg-offset-2">
+	<div class="jumbotron">
+		<form id="basic_info">
+			<h3 class="text-center">Basic Information</h3>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-4">
+						<label class="form-label">Name <span style="color: red">*</span>:</label>
+					</div>
+					<div class="col-lg-8">
+						<input type="text" name="name" id="name" class="form-control" data-required="Name is Required!" required="">
+						<span class="error"></span>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-lg-4">
+						<label class="form-label">Email <span style="color: red">*</span>:</label>
+					</div>
+					<div class="col-lg-8">
+						<input type="text" name="email" id="email" class="form-control" data-required="Email is Required!" required="">
+						<span class="error"></span>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-lg-4">
+						<label class="form-label">Phone:</label>
+					</div>
+					<div class="col-lg-8">
+						<input type="text" name="phone" id="phone" class="form-control">
+					</div>
+				</div>
+				<input type="hidden" name="questionRound" id="questionRound" value="">
+			</div>
+			<div class="pull-right">
+				<button type="button" class="btn btn-success" id="proceed" onclick="checkRequiredFields()">Proceed to test</button>
+			</div>
+		</form>
+		<form id="main_test">
+			<h3 class="text-center">Demo Test</h3>
+			<div class="template">
+				
+			</div>
+		</form>
+	</div>
+</div>
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Other Option?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+			<div class="col-lg-4">
+				<label class="form-label">Other:</label>
+			</div>
+			<div class="col-lg-8">
+				<input type="text" id="other_opt" class="form-control">
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="saveOption()">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="assets/js/app.js"></script>
